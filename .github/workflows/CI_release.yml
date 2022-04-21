@@ -1,8 +1,7 @@
 name: CMake
 
 on:
- push:
-   tags: true
+  tags: true
 
 jobs: 
  build_packages_Linux:
