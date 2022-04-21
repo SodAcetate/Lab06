@@ -1,0 +1,10 @@
+Architecture: all
+Description: static C++ library for solver
+ tut solver jou
+Maintainer: Previshaet
+Package: solverapp-dev
+Priority: optional
+Section: devel
+Version: 1.1.0.0-1
+Installed-Size: 39
+

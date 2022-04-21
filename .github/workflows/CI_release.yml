@@ -2,12 +2,11 @@ name: CMake
 
 on:
  push:
-  branches: [main]
- pull_request:
-  branches: [main]
+   tags:
+     - v1.**
 
 jobs: 
- build_Linux:
+ build_packages_Linux:
 
   runs-on: ubuntu-latest
 
@@ -19,3 +18,9 @@ jobs:
 
   - name: Build Solver
     run: cmake --build ${{github.workspace}}/solver_application/build
+
+  - name: Build package
+    run: cmake --build ${{github.workspace}}/solver_application/build --target package
+
+  - name: Build source package
+    run: cmake --build ${{github.workspace}}/solver_application/build --target package_source
