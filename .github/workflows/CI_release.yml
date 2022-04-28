@@ -24,3 +24,8 @@ jobs:
 
   - name: Build source package
     run: cmake --build ${{github.workspace}}/build --target package_source
+
+	- uses: ncipollo/release-action@v1.10.0
+		with:
+			artifacts: "build/*.deb,build/*.tar.gz,build/*.zip"
+			token: ${{ secrets.GITHUB_TOKEN }}
