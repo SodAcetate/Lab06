@@ -26,19 +26,20 @@ jobs:
     run: cmake --build ${{github.workspace}}/build --target package_source
 
   - name: Upload packages to tag
-  - run: github-release upload \
+    run: |
+			github-release upload \
       --user ${{GITHUB_REPOSITORY_OWNER}} \
       --repo ${{GITHUB_REPOSITORY}} \
       --tag ${{GITHUB_REF_NAME}} \
       --name "solver-"${{GITHUB_REF_NAME}}".dev" 
       --file build/solver.deb
-  - run: github-release upload \
-        --user ${{GITHUB_REPOSITORY_OWNER}} \
-        --repo ${{GITHUB_REPOSITORY}} \
-        --tag ${{GITHUB_REF_NAME}} \
-        --name "solver-"${{GITHUB_REF_NAME}}"-source.tar.gz" \
-        --file build/*tar.gz
-  - run: github-release upload \
+			github-release upload \
+      --user ${{GITHUB_REPOSITORY_OWNER}} \
+      --repo ${{GITHUB_REPOSITORY}} \
+      --tag ${{GITHUB_REF_NAME}} 
+      --name "solver-"${{GITHUB_REF_NAME}}"-source.tar.gz" \
+      --file build/*tar.gz
+			github-release upload \
       --user ${{GITHUB_REPOSITORY_OWNER}} \
       --repo ${{GITHUB_REPOSITORY}} \
       --tag ${{GITHUB_REF_NAME}} \
