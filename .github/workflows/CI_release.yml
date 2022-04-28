@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Configure Solver
-      run: cmake ${{github.workspace}} -B ${{github.workspace}}/build -D PRINT_VERSION=${{github.GITHUB_REF_NAME#v}}
+      run: cmake ${{github.workspace}} -B ${{github.workspace}}/build -D PRINT_VERSION=${{github.GITHUB_REF_NAME}#v}
 
     - name: Build Solver
       run: cmake --build ${{github.workspace}}/build
