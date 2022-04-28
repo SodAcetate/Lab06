@@ -24,6 +24,9 @@ jobs:
 
   - name: Build source package
     run: cmake --build ${{github.workspace}}/build --target package_source
+	
+	- name: Configure github-release
+
 
   - name: Upload packages to tag
     run: |
