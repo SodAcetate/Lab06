@@ -28,25 +28,23 @@ jobs:
   - name: Upload packages to tag
   - run: |
       github-release upload \
-      --user ${{GITHUB_REPOSITORY_OWNER}} \
-      --repo ${{GITHUB_REPOSITORY}} \
-      --tag ${{GITHUB_REF_NAME}} \
-      --name "solver-"${{GITHUB_REF_NAME}}".dev" \
-      --file build/solver.deb
-
+        --user ${{GITHUB_REPOSITORY_OWNER}} \
+        --repo ${{GITHUB_REPOSITORY}} \
+        --tag ${{GITHUB_REF_NAME}} \
+        --name "solver-"${{GITHUB_REF_NAME}}".dev" \
+        --file build/solver.deb
       github-release upload \
-      --user ${{GITHUB_REPOSITORY_OWNER}} \
-      --repo ${{GITHUB_REPOSITORY}} \
-      --tag ${{GITHUB_REF_NAME}} \
-      --name "solver-"${{GITHUB_REF_NAME}}"-source.tar.gz" \
-      --file build/*tar.gz
-
+        --user ${{GITHUB_REPOSITORY_OWNER}} \
+        --repo ${{GITHUB_REPOSITORY}} \
+        --tag ${{GITHUB_REF_NAME}} \
+        --name "solver-"${{GITHUB_REF_NAME}}"-source.tar.gz" \
+        --file build/*tar.gz
       github-release upload \
-      --user ${{GITHUB_REPOSITORY_OWNER}} \
-      --repo ${{GITHUB_REPOSITORY}} \
-      --tag ${{GITHUB_REF_NAME}} \
-      --name "solver-"${{GITHUB_REF_NAME}}"-source.zip" \
-      --file build/*.zip
+        --user ${{GITHUB_REPOSITORY_OWNER}} \
+        --repo ${{GITHUB_REPOSITORY}} \
+        --tag ${{GITHUB_REF_NAME}} \
+        --name "solver-"${{GITHUB_REF_NAME}}"-source.zip" \
+        --file build/*.zip
 
 
 
